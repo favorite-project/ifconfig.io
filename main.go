@@ -156,6 +156,9 @@ func mainHandler(c *gin.Context) {
 	case "request":
 		c.JSON(200, c.Request)
 		return
+	case "json":
+		c.JSON(200, c.Keys)
+		return
 	case "all":
 		if wantsJSON {
 			c.JSON(200, c.Keys)
@@ -211,7 +214,7 @@ func main() {
 	for _, route := range []string{
 		"ip", "ua", "port", "lang", "encoding", "method",
 		"mime", "referer", "forwarded", "country_code",
-		"all", "headers", "porttest", "host",
+		"all", "headers", "porttest", "host", "json",
 	} {
 		r.GET(fmt.Sprintf("/%s", route), mainHandler)
 		r.GET(fmt.Sprintf("/%s.json", route), mainHandler)
