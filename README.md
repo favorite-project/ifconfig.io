@@ -12,7 +12,7 @@ Inspired by ifconfig.me, but designed for pure speed. A single server can do 18,
   - [Docker Compose](#docker-compose)
   - [ENVs](#envs)
 
-# Short Summery
+# Short Summary
 
 I used the gin framework as it does several things to ensure that there are no memory allocations on each request, keeping the GC happy and preventing unnessary allocations.
 
@@ -22,7 +22,7 @@ Tested to handle 10,000 clients doing 90,000 requests persecond on modest hardwa
 
 # Deployment
 
-You can use the source code directly to deploy your own server. You can also you can use Docker and Docker Compose.
+You can use the source code directly to deploy your own server. You can also use Docker and Docker Compose.
 
 ## Docker-Compose
 
@@ -33,7 +33,7 @@ version: "3.4"
 
 services:
   ifconfig:
-    image: ifconfig.io:latest
+    image: georgyo/ifconfig.io
     ports:
       - 8080:8080
 ```
@@ -45,7 +45,7 @@ version: "3.4"
 
 services:
   ifconfig:
-    image: ifconfig.io:latest
+    image: georgyo/ifconfig.io
     ports:
       - 8080:8080
     environment:
@@ -57,7 +57,7 @@ version: "3.4"
 
 services:
   ifconfig:
-    image: ifconfig.io:latest
+    image: georgyo/ifconfig.io
     ports:
       - 8080:8080
     env_file:
